@@ -1,4 +1,4 @@
 theme: jekyll-theme-slate
 
-site.title: "The FlowDev Project"
-site.description: "Refactoring A Big Ball Of Mud Into Independent And Easy To Understand Components"
+title: "The FlowDev Project"
+description: "Refactoring A Big Ball Of Mud Into Independent And Easy To Understand Components"

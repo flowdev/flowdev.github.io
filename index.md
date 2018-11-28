@@ -1,5 +1,5 @@
 ---
-title: The FlowDev Project 1
+title: Home
 ---
 # The FlowDev Project 2
 
