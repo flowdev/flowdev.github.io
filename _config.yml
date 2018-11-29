@@ -2,3 +2,7 @@ theme: jekyll-theme-slate
 
 title: "The FlowDev Project"
 description: "Refactoring A Big Ball Of Mud Into Independent And Easy To Understand Components"
+
+baseurl: "blog/"
+url: "flowdev.github.io"
+permalink: "/:title"
