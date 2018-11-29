@@ -3,5 +3,14 @@ theme: jekyll-theme-slate
 title: "The FlowDev Project"
 description: "Refactoring A Big Ball Of Mud Into Independent And Easy To Understand Components"
 
-baseurl: blog/
-url: flowdev.github.io
+plugins:
+    - jekyll-gist
+    - jekyll-github-metadata
+    - jekyll-paginate
+    - jekyll-relative-links
+    - jekyll-optional-front-matter
+    - jekyll-readme-index
+    - jekyll-default-layout
+    - jekyll-titles-from-headings
+    - jekyll-sitemap
+    - jekyll-feed
