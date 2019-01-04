@@ -36,7 +36,7 @@
     <!-- NAVIGATION -->
     <nav style="margin: 5px;">
       {% for item in site.data.navigation %}
-        <a href="{{ item.link }}" style="padding: 5px 15px; margin: 0px 10px;{% if page.url == item.link %} color: black; background: white;{% endif %}">
+	  <a href="{{ item.link }}" style="padding: 5px 15px 10px 15px; margin: 0px 10px;{% if page.url == item.link %} color: black; background: #f2f2f2;{% else %}color: #f2f2f2;{% endif %}">
           {{ item.name }}
         </a>
       {% endfor %}
