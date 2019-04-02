@@ -77,7 +77,7 @@ interfaces are not.
 
 ## Adding A Significant Feature Like Generics To Go Changes The Language For Good
 
-![Rune Stone](assets/images/runeStone.jpg)
+![Rune Stone](/images/runeStone.jpg)
 
 This is a very fundamental and long term decision!
 Python is still strugling to get version 3 fully adopted and it started more
@@ -97,7 +97,7 @@ The last couple of years the Go community has been roughly doubling every year.
 The Go community is now well beyond just innovators and early adopters but well
 into the early majority.
 
-![adoption curve](assets/images/adoption-curve.jpg)
+![adoption curve](/images/adoption-curve.jpg)
 
 As great as this is it is changing the culture of the Go community, too.
 Please don't get me wrong, these are nice people and a valueable addition to
@@ -199,7 +199,7 @@ simply don't understand abstract concepts. They just remember and reproduce
 some important use cases.
 
 The full source code for this stage (all in one file) can be found in
-[news1.go](assets/images/go/news1/news1.go).
+[news1.go](/images/go/news1/news1.go).
 
 ### Problem Definition For Second Stage
 
@@ -306,7 +306,7 @@ So the copy and pasting is really painless.
 Now we are sure we are on the right track.
 
 The full source code for this stage (all in one file) can be found in
-[news2.go](assets/images/go/news2/news2.go).
+[news2.go](/images/go/news2/news2.go).
 
 ### Problem Definition For Third Stage
 
@@ -417,7 +417,7 @@ too difficult.
 We feel good with this pragmatic style and ready for the years to come.
 
 The full source code for this stage (all in one file) can be found in
-[news3.go](assets/images/go/news3/news3.go).
+[news3.go](/images/go/news3/news3.go).
 
 ## Criticism Of The Last Contract
 
