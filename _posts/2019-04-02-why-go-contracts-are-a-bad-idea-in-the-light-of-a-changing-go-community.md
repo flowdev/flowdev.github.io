@@ -11,7 +11,9 @@ TL;DR
 * This is especially true since now are more and more pragmatic programmers
   becoming Gophers.
 * Generics for containers can be achieved with enhanced interfaces, too.
-* Generics for (un-)marshaling and templating are more difficult.
+* Generics for (un-)marshaling and templating are much more difficult.
+* I added this post to the
+  [feedback wiki page](https://github.com/golang/go/wiki/Go2GenericsFeedback).
 
 ## Disclaimer
 
@@ -467,7 +469,7 @@ So here is what might work better in my humble opinion:
   * It would be nice if the generator would be called by `go build` and
 	wouldn't need a separate command.
 1. Enhancing interfaces to support operators.
-   E.g. `\_\_Min\_\_(a, b int) int` for the `<` operator.
+   E.g. `__Min__(a, b int) int` for the `<` operator.
    I know there are some awful details around the exact types to be solved but
    this should be possible. If all else fails the special types that are used
    by the operators could be supported for these special interface methods.
