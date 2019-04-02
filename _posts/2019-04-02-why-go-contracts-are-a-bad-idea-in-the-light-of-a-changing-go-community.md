@@ -10,8 +10,8 @@ TL;DR
 * This can lead to very ugly copy/paste programming.
 * This is especially true since now are more and more pragmatic programmers
   becoming Gophers.
-* Generics for containers can be achieved with interfaces, too.
-* Generics for (un-)marshaling and templating seem to be more difficult.
+* Generics for containers can be achieved with enhanced interfaces, too.
+* Generics for (un-)marshaling and templating are more difficult.
 
 ## Disclaimer
 
@@ -97,7 +97,7 @@ The last couple of years the Go community has been roughly doubling every year.
 The Go community is now well beyond just innovators and early adopters but well
 into the early majority.
 
-![adoption curve](/images/adoption-curve.jpg)
+![adoption curve](/images/adoption-curve.png)
 
 As great as this is it is changing the culture of the Go community, too.
 Please don't get me wrong, these are nice people and a valueable addition to
@@ -441,3 +441,49 @@ type Article interface {
 
 It has the same number of lines as the contract but in my humble opinion
 declarations are inherently easier to read than definitions.
+
+Go contracts with all their flexibility and power are for sure good enough for
+supporting the creation of new containers (specilized lists, hash tables,
+trees, ...).
+Most specialized containers (e.g. for caching) are developed by specilists in
+libraries for the rest of the Go community to use.
+
+Unfortunately Go contracts won't give us type safe encoding or templating.
+
+## Alternatives
+
+I don't like simple rants that don't present a better alternative.
+They don't feel constructive to me.
+So here is what might work better in my humble opinion:
+
+1. Better support for code generation. Code generation is a very powerful tool
+   that is being used already (e.g. for protocol buffers).
+   This is a very sharp sword and can be misused a lot.
+   Thankfully I have seen only few such misuses in the wild and they seem to
+   become less now.
+  * I would love to have a convention or plugin mechanism that ensures that the
+	right version of the tool is used for code generation.
+	As this usually comes with a dependency it should update with the dependency.
+  * It would be nice if the generator would be called by `go build` and
+	wouldn't need a separate command.
+1. Enhancing interfaces to support operators.
+   E.g. `\_\_Min\_\_(a, b int) int` for the `<` operator.
+   I know there are some awful details around the exact types to be solved but
+   this should be possible. If all else fails the special types that are used
+   by the operators could be supported for these special interface methods.
+   As syntax I would like to suggest
+   `func Stringify(s []T:stringer) (ret []string)` instead of
+   `func Stringify(type T stringer)(s []T) (ret []string)`.
+1. Even a solution that would be open only to library writers would be better.
+   Even when one would have to apply and qualify to get a special tool.
+   Of course this would officially create a two class society...
+1. Finally no change at all would still be better than the existing proposal
+   with Go contracts. I don't mind getting generics but please not for the
+   price that Go contracts have.
+
+## Attributions
+
+* Proposal: https://go.googlesource.com/proposal/+/master/design/go2draft-contracts.md
+* Rune stone: By Henrik Sendelbach, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=256875
+* Adoption curve: CC BY 2.5, https://en.wikipedia.org/w/index.php?curid=11484459
+* Talk about Go community changes by Natalie Pistunovich: https://www.youtube.com/watch?v=7yMXs9TRvVI
