@@ -101,7 +101,9 @@ into the early majority.
 
 ![adoption curve](/images/adoption-curve.png)
 
-As great as this is it is changing the culture of the Go community, too.
+As great as this is it is
+[changing the culture of the Go community](https://www.youtube.com/watch?v=7yMXs9TRvVI),
+too.
 Please don't get me wrong, these are nice people and a valueable addition to
 the Go community. It is a sign that the Go community is becoming more mature.
 But they are often less interested in the finer technical details of the tools
@@ -485,7 +487,11 @@ So here is what might work better in my humble opinion:
 
 ## Attributions
 
-* Proposal: https://go.googlesource.com/proposal/+/master/design/go2draft-contracts.md
-* Rune stone: By Henrik Sendelbach, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=256875
-* Adoption curve: CC BY 2.5, https://en.wikipedia.org/w/index.php?curid=11484459
-* Talk about Go community changes by Natalie Pistunovich: https://www.youtube.com/watch?v=7yMXs9TRvVI
+* Go contracts proposal:
+  [https://go.googlesource.com/proposal/+/master/design/go2draft-contracts.md](https://go.googlesource.com/proposal/+/master/design/go2draft-contracts.md)
+* Rune stone: By Henrik Sendelbach, CC BY-SA 3.0,
+  [https://commons.wikimedia.org/w/index.php?curid=256875](https://commons.wikimedia.org/w/index.php?curid=256875)
+* Adoption curve: CC BY 2.5,
+  [https://en.wikipedia.org/w/index.php?curid=11484459](https://en.wikipedia.org/w/index.php?curid=11484459)
+* Talk about Go community changes by Natalie Pistunovich:
+  [https://www.youtube.com/watch?v=7yMXs9TRvVI](https://www.youtube.com/watch?v=7yMXs9TRvVI)
