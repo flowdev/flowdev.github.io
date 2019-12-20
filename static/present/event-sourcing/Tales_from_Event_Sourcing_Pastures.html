@@ -1,27 +1,28 @@
+
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html>
+  <head>
     <title>Tales from Event Sourcing Pastures</title>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <script>
       var notesEnabled =  true ;
     </script>
-    <script src="/static/slides.js"></script>
+    <script src='/static/slides.js'></script>
 
     
     <script>
-      var sections = [{"Number":[1],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[2],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)","Events as from the real world (i.e. open account)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[3],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)","Events as from the real world (i.e. open account)","Events are history (you shouldn't rewrite it)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[4],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[5],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[6],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable","Traceability"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[7],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable","Traceability","Deterministic error analysis"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[8],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[9],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[10],"Title":"Downsides","Elem":[{"URL":"images/straight-jacket.jpg","Width":0,"Height":600}],"Notes":null,"Classes":null,"Styles":null},{"Number":[11],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[12],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[13],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult","Cutting events in a different way is almost a rewrite of the whole system"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[14],"Title":"Downsides","Elem":[{"URL":"images/straight-jacket2.jpg","Width":0,"Height":600}],"Notes":null,"Classes":null,"Styles":null},{"Number":[15],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult","Cutting events in a different way is almost a rewrite of the whole system","GDPR (General Data Protection Regulation)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[16],"Title":"Downsides","Elem":[{"URL":"images/straight-jacket3.jpg","Width":0,"Height":600}],"Notes":["More serious infringements go against the very principles of the right to privacy and the right to be forgotten that are at the heart of the GDPR.","Fine of up to €20 million, or 4% of the firm’s worldwide annual revenue from the preceding financial year, whichever amount is higher.","All really one downside that can be mitigated with enough tooling."],"Classes":null,"Styles":null},{"Number":[17],"Title":"","Elem":null,"Notes":["Split event store and message queue can be challenging to keep consistent","Extra processor (projector) for writing to the query store"],"Classes":["background"],"Styles":["background-image: url('images/event-sourcing-and-cqrs.png')"]},{"Number":[18],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[19],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[20],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[21],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)","Even writes can be made fast (without full validation)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[22],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)","Even writes can be made fast (without full validation)","Perfect for FAANG"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[23],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[24],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[25],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services","Not one `query` service but many"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[26],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services","Not one `query` service but many","Quite a lot of complexity (easily many 100 services; or 3 to 10 times more than reasonable)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[27],"Title":"Biggest Upside: Developer Happiness","Elem":null,"Notes":null,"Classes":null,"Styles":null},{"Number":[28],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[29],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This clearly shows: You are good enough for them"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[30],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[31],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[32],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star","Your next employer (most likely FAANG) will value your experience"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[33],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star","Your next employer (most likely FAANG) will value your experience","If your company really has to scale like crazy: You saved them!"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[34],"Title":"","Elem":null,"Notes":null,"Classes":["background"],"Styles":["background-image: url('images/steve-jobs.jpg')"]},{"Number":[35],"Title":"Reality: Big Ego Trip","Elem":null,"Notes":null,"Classes":null,"Styles":null},{"Number":[36],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[37],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[38],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post","You will never get invited to any conference"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[39],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post","You will never get invited to any conference","Future employers see your big ego"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[40],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[41],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[42],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[43],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[44],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes","Use extra tables if necessary (mini CQRS)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[45],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes","Use extra tables if necessary (mini CQRS)","Use history tables (e.g. filled by triggers)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[46],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[47],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[48],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[49],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[50],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible","Manager still needs tech know how (if shit hits the fan)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[51],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible","Manager still needs tech know how (if shit hits the fan)","Manager might let you work on OpenSource"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[52],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[53],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[54],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[55],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[56],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[57],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[58],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way","Your OpenSource know-how will be handy if problems with the project show up"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[59],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way","Your OpenSource know-how will be handy if problems with the project show up","If you help others to go this way you can be promoted"]}],"Notes":null,"Classes":null,"Styles":null}];
+      var sections = [{"Number":[1],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[2],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)","Events as from the real world (i.e. open account)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[3],"Title":"Event Sourcing - What is it?","Elem":[{"Bullet":["Events instead of application state (as entities)","Events as from the real world (i.e. open account)","Events are history (you shouldn't rewrite it)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[4],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[5],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[6],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable","Traceability"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[7],"Title":"Upsides","Elem":[{"Bullet":["event store = DB + queue","Replayable","Traceability","Deterministic error analysis"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[8],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[9],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)","For Kafka: lack of hosting"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[10],"Title":"Downsides","Elem":[{"URL":"images/handcuffs.jpg","Width":0,"Height":600}],"Notes":null,"Classes":null,"Styles":null},{"Number":[11],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[12],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[13],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling (especially if using queue)","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult","Cutting events in a different way is almost a rewrite of the whole system"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[14],"Title":"Downsides","Elem":[{"URL":"images/handcuffs+thumbcuffs.jpg","Width":0,"Height":600}],"Notes":null,"Classes":null,"Styles":null},{"Number":[15],"Title":"Downsides","Elem":[{"Bullet":["Lack of tooling","For Kafka: lack of hosting","Technical changes (corrections for typos, ...) difficult","Pivoting can be very difficult","Cutting events in a different way is almost a rewrite of the whole system","GDPR (General Data Protection Regulation)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[16],"Title":"Downsides","Elem":[{"URL":"images/straitjacket-full.jpg","Width":0,"Height":600}],"Notes":["More serious infringements go against the very principles of the right to privacy and the right to be forgotten that are at the heart of the GDPR.","Fine of up to €20 million, or 4% of the firm’s worldwide annual revenue from the preceding financial year, whichever amount is higher.","All really one downside that can be mitigated with enough tooling."],"Classes":null,"Styles":null},{"Number":[17],"Title":"","Elem":null,"Notes":["Split event store and message queue can be challenging to keep consistent","Extra processor (projector) for writing to the query store"],"Classes":["background"],"Styles":["background-image: url('images/EvSrc+CQRS.png')"]},{"Number":[18],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[19],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[20],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[21],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)","Even writes can be made fast (without full validation)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[22],"Title":"Upsides","Elem":[{"Bullet":["Clear specification how to cut micro-services","New query stores can be invented later","Endless scalebility (for reads)","Even writes can be made fast (without full validation)","Perfect for FAANG"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[23],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[24],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[25],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services","Not one `query` service but many"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[26],"Title":"Downsides","Elem":[{"Bullet":["Requires a lot hard to get or create tooling","Next to `command` and `query` services also `projector` and `reactor` services","Not one `query` service but many","Quite a lot of complexity (easily many 100 services; or 3 to 10 times more than reasonable)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[27],"Title":"Biggest Upside: Developer Happiness","Elem":null,"Notes":null,"Classes":null,"Styles":null},{"Number":[28],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[29],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This clearly shows: You are good enough for them"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[30],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[31],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[32],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star","Your next employer (most likely FAANG) will value your experience"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[33],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["You work like for FAANG","This shows you are good enough for them","You can write famous blog posts, too","You will be invited to big conferences and become a star","Your next employer (most likely FAANG) will value your experience","If your company really has to scale like crazy: You saved them!"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[34],"Title":"You Will Be The Next Steve Jobs!","Elem":[{"URL":"images/steve-jobs.jpg","Width":0,"Height":800}],"Notes":null,"Classes":null,"Styles":null},{"Number":[35],"Title":"Reality: Big Ego Trip","Elem":null,"Notes":null,"Classes":null,"Styles":null},{"Number":[36],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[37],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[38],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post","You will never get invited to any conference"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[39],"Title":"Reality: Big Ego Trip","Elem":[{"Bullet":["Your company will blame you for the complexity","You will never write that cool blog post","You will never get invited to any conference","Future employers see your big ego"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[40],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[41],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[42],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[43],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[44],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes","Use extra tables if necessary (mini CQRS)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[45],"Title":"What To Do Instead","Elem":[{"Bullet":["Understand CQRS","Prevent *anti-CQRS*","Use many status","Subscribe to DB changes","Use extra tables if necessary (mini CQRS)","Use history tables (e.g. filled by triggers)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[46],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[47],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[48],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[49],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[50],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible","Manager still needs tech know how (if shit hits the fan)"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[51],"Title":"Upsides","Elem":[{"Bullet":["As simple as reasonable","Upgrade path towards CQRS","At least 90% of CQRS scaleability (multiple 100 million users)","More junior developers possible","Manager still needs tech know how (if shit hits the fan)","Manager might let you work on OpenSource"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[52],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[53],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[54],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[55],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[56],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[57],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[58],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way","Your OpenSource know-how will be handy if problems with the project show up"]}],"Notes":null,"Classes":null,"Styles":null},{"Number":[59],"Title":"Biggest Upside: Developer Happiness","Elem":[{"Bullet":["Your company works like how most companies would like to","This shows you are good enough for them","You can write good blog posts, too","You can speak at conferences","Your next employer (even FAANG) will value your experience","If your company has to scale: You know an adequate way","Your OpenSource know-how will be handy if problems with the project show up","If you help others to go this way you can be promoted"]}],"Notes":null,"Classes":null,"Styles":null}];
       var titleNotes = ["Who has experience with event-sourcing; CQRS?","Who knows about event-sourcing; CQRS?","Who is working for FAANG?","Who is working for a startup?","Who wants to move fast (and break things)?","Who works in a regulated environment?"]
     </script>
-    <script src="/static/notes.js"></script>
+    <script src='/static/notes.js'></script>
     
-  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"></head>
+  </head>
 
-  <body style="display: none" class="loaded">
+  <body style='display: none'>
 
-    <section class="slides layout-widescreen">
+    <section class='slides layout-widescreen'>
 
-      <article class="current">
+      <article>
         <h1>Tales from Event Sourcing Pastures</h1>
         
         
@@ -66,7 +67,7 @@
 
   
   
-      <article class="next">
+      <article >
       
         <h3>Event Sourcing - What is it?</h3>
         
@@ -82,7 +83,7 @@
   
   
   
-      <article class="far-next">
+      <article >
       
         <h3>Event Sourcing - What is it?</h3>
         
@@ -100,7 +101,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Event Sourcing - What is it?</h3>
         
@@ -110,7 +111,7 @@
   
     <li>Events as from the real world (i.e. open account)</li>
   
-    <li>Events are history (you shouldn't rewrite it)</li>
+    <li>Events are history (you shouldn&#39;t rewrite it)</li>
   
   </ul>
 
@@ -120,7 +121,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -136,7 +137,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -154,7 +155,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -174,7 +175,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -196,7 +197,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -212,13 +213,13 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
   <ul>
   
-    <li>Lack of tooling</li>
+    <li>Lack of tooling (especially if using queue)</li>
   
     <li>For Kafka: lack of hosting</li>
   
@@ -230,12 +231,12 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
 <div class="image">
-  <img src="images/straight-jacket.jpg" height="600">
+  <img src="images/handcuffs.jpg" height="600">
 </div>
 
       
@@ -244,13 +245,13 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
   <ul>
   
-    <li>Lack of tooling</li>
+    <li>Lack of tooling (especially if using queue)</li>
   
     <li>For Kafka: lack of hosting</li>
   
@@ -264,13 +265,13 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
   <ul>
   
-    <li>Lack of tooling</li>
+    <li>Lack of tooling (especially if using queue)</li>
   
     <li>For Kafka: lack of hosting</li>
   
@@ -286,13 +287,13 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
   <ul>
   
-    <li>Lack of tooling</li>
+    <li>Lack of tooling (especially if using queue)</li>
   
     <li>For Kafka: lack of hosting</li>
   
@@ -310,12 +311,12 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
 <div class="image">
-  <img src="images/straight-jacket2.jpg" height="600">
+  <img src="images/handcuffs&#43;thumbcuffs.jpg" height="600">
 </div>
 
       
@@ -324,7 +325,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -350,12 +351,12 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
 <div class="image">
-  <img src="images/straight-jacket3.jpg" height="600">
+  <img src="images/straitjacket-full.jpg" height="600">
 </div>
 
       
@@ -364,7 +365,7 @@
   
   
   
-      <article class="background" style="background-image: url('images/event-sourcing-and-cqrs.png')">
+      <article class="background" style="background-image: url('images/EvSrc+CQRS.png')">
       
         <h2></h2>
       
@@ -373,7 +374,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -389,7 +390,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -407,7 +408,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -427,7 +428,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -449,7 +450,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -473,7 +474,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -489,7 +490,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -507,7 +508,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -527,7 +528,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Downsides</h3>
         
@@ -549,7 +550,7 @@
   
   
   
-      <article>
+      <article >
       
         <h2>Biggest Upside: Developer Happiness</h2>
       
@@ -558,7 +559,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -574,7 +575,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -592,7 +593,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -612,7 +613,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -634,7 +635,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -658,7 +659,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -684,16 +685,21 @@
   
   
   
-      <article class="background" style="background-image: url('images/steve-jobs.jpg')">
+      <article >
       
-        <h2></h2>
+        <h3>You Will Be The Next Steve Jobs!</h3>
+        
+<div class="image">
+  <img src="images/steve-jobs.jpg" height="800">
+</div>
+
       
       <span class="pagenumber">35</span>
       </article>
   
   
   
-      <article>
+      <article >
       
         <h2>Reality: Big Ego Trip</h2>
       
@@ -702,7 +708,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Reality: Big Ego Trip</h3>
         
@@ -718,7 +724,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Reality: Big Ego Trip</h3>
         
@@ -736,7 +742,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Reality: Big Ego Trip</h3>
         
@@ -756,7 +762,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Reality: Big Ego Trip</h3>
         
@@ -778,7 +784,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -794,7 +800,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -812,7 +818,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -832,7 +838,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -854,7 +860,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -878,7 +884,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>What To Do Instead</h3>
         
@@ -904,7 +910,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -920,7 +926,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -938,7 +944,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -958,7 +964,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -980,7 +986,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -1004,7 +1010,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Upsides</h3>
         
@@ -1030,7 +1036,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1046,7 +1052,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1064,7 +1070,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1084,7 +1090,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1106,7 +1112,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1130,7 +1136,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1156,7 +1162,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1184,7 +1190,7 @@
   
   
   
-      <article>
+      <article >
       
         <h3>Biggest Upside: Developer Happiness</h3>
         
@@ -1224,7 +1230,7 @@
     27 Nov 2019
   </p>
   
-<p class="link"><a href="#ZgotmplZ" target="_blank">Tags: architecture, event-sourcing, golang</a></p>
+<p class="link"><a href="#ZgotmplZ" target="_blank">Tags: architecture, event-sourcing, CQRS, Golang</a></p>
           </div>
         
           <div class="presenter">
@@ -1241,6 +1247,30 @@
   </p>
   
 <p class="link"><a href="https://flowdev.github.io/" target="_blank">https://flowdev.github.io/</a></p><p class="link"><a href="http://twitter.com/flowdev_org" target="_blank">@flowdev_org</a></p>
+  
+  <p>
+    Attributions for images:
+  </p>
+  
+<p class="link"><a href="#ZgotmplZ" target="_blank">Handcuffs: NATO Training Mission-Afghanistan [CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0)]</a></p>
+  
+  <p>
+    Handcuffs and Thumbcuffs: © Raimond Spekking
+  </p>
+  
+<p class="link"><a href="#ZgotmplZ" target="_blank">Straightjacket: Marc NL at English Wikipedia [Public domain]</a></p>
+  
+  <p>
+    Event Sourcing and CQRS: Created myself [Public domain]
+  </p>
+  
+
+  
+  <p>
+    Steve Jobs: MetalGearLiquid, based on File:Steve_Jobs_Headshot_2010-CROP.jpg made by Matt Yohe [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)]
+  </p>
+  
+
           </div>
         
           <div class="presenter">
@@ -1255,17 +1285,16 @@
         
       </article>
 
-    <div class="slide-area" id="prev-slide-area"></div><div class="slide-area" id="next-slide-area"></div></section>
+    </section>
 
-    <div id="help" style="display: none;">
+    <div id="help">
       Use the left and right arrow keys or click the left and right
       edges of the page to navigate between slides.<br>
       (Press 'H' or navigate to hide this message.)
     </div>
 
     
-    <script src="/static/play.js"></script>
+    <script src='/play.js'></script>
     
-  
-
-<link rel="stylesheet" type="text/css" href="/static/css.css"><link rel="stylesheet" type="text/css" href="/static/styles.css"></body></html>
+  </body>
+</html>
