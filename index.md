@@ -10,7 +10,7 @@ into one that is easy to understand and maintain.
 
 To achieve this you don't need big frameworks or a complex organization but only:
 * a set of simple rules,
-* a small open source tool to document the new software structure and
+* a small open source tool to check the rules and document the new software structure and
 * of course a clear mind willing to simplify things.
 
 The result has got the following properties:
